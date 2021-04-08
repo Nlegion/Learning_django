@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IHRlc3RfdGVzdA==?=
+From: django@geekshop.local
+To: geeek@geeek.ru
+Date: Wed, 07 Apr 2021 19:30:34 -0000
+Message-ID: <161782383472.21307.12414441382063424897@MacBook-Air-3.local>
+
+Для подтверждения учетной записи test_test на портале http://localhost:8000 перейдите по ссылке: 
+http://localhost:8000/auth/user/verify/geeek@geeek.ru/f8035354650753e505c8253339f4f98329d6aa43/
+-------------------------------------------------------------------------------
