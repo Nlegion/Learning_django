@@ -29,6 +29,9 @@ class PageTitleMixin:
 @user_passes_test(lambda user: user.is_superuser)
 def index(request):
     all_users = get_user_model().objects.all()
+    # forms = []
+    # for user in all_users:
+    #     forms.append(form(user))
     context = {
         'page_title': 'админка/пользователи',
         'all_users': all_users,

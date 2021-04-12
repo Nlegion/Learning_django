@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('social/', include('social_django.urls', namespace='social')),
     path('new/admin/', include('adminapp.urls', namespace='new_admin')),
+    path('orders/', include('ordersapp.urls', namespace='orders')),
 ]
 
 if settings.DEBUG:
