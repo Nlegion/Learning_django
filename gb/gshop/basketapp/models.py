@@ -1,6 +1,7 @@
 from django.db import models
 from mainapp.models import Product
 from django.contrib.auth import get_user_model
+from django.utils.functional import cached_property
 
 
 class Basket(models.Model):
@@ -10,7 +11,11 @@ class Basket(models.Model):
     add_datetime = models.DateTimeField('время', auto_now_add=True)
     update_datetime = models.DateTimeField('время', auto_now=True)
 
-    @property
+    @cached_property
     def product_cost(self):
         return self.product.price * self.quantity
+
+    # @classmethod
+    # def get_item(cls,pk):
+    #     return cls.objects.filter(pk=pk).first()
 

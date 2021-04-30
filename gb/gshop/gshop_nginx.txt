@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name 77.222.52.244;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /root/gshop;
+    }
+
+    location /media/ {
+        root /root/gshop;
+    }
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/root/gshop/gshop.sock;
+    }
+}

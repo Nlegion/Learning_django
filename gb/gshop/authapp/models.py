@@ -5,6 +5,7 @@ from django.core.mail import send_mail
 from django.db import models
 from django.contrib.auth.models import User, AbstractUser
 from django.urls import reverse
+from django.utils.functional import cached_property
 from django.utils.timezone import now
 from datetime import timedelta
 
@@ -16,6 +17,12 @@ class ShopUser(AbstractUser):
     avatar = models.ImageField(upload_to='avatars', blank=True)
     activation_key = models.CharField(max_length=128, blank=True)
     registered = models.DateTimeField(auto_now_add=True, null=True)
+
+    @cached_property
+    def basket_items(self):
+        #return self.basket.all()
+        return self.basket.select_related().all()
+
 
     def basket_price(self):
         return sum(el.product_cost for el in self.basket.all())

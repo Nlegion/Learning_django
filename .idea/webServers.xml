@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="08c1a7ed-8c3b-4d4d-81a2-2a2ded614534" name="django">
+        <fileTransfer rootFolder="/home/nlegion/" accessType="SFTP" host="77.222.52.244" port="22" sshConfigId="8afe0b09-bea4-4fcd-bca2-26906d80eb09" sshConfig="root@77.222.52.244:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
