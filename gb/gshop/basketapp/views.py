@@ -3,7 +3,8 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 from django.urls import reverse
-
+from django.db import connection
+from django.db.models import F
 from gshop.settings import LOGIN_URL
 from basketapp.models import Basket
 
@@ -29,8 +30,10 @@ def add(request, product_pk):
         user=request.user,
         product_id=product_pk
     )
-    basket_item.quantity += 1
+    # basket_item.quantity += 1
+    basket_item.quantity = F('quantity') + 1
     basket_item.save()
+    print(connection.queries)
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 
 

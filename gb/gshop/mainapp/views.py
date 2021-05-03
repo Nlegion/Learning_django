@@ -5,8 +5,10 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.cache import never_cache
-
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 from gshop import settings
+from django.db import connection
 from mainapp.models import Product, ProductCategory
 
 
@@ -68,6 +70,7 @@ def contact(request):
                }
     return render(request, 'mainapp/contact.html', context)
 
+
 @never_cache
 def products(request):
     hot_product = get_hot_product()
@@ -118,3 +121,22 @@ def get_product_price(request, pk):
         return JsonResponse(
             {'price': product and product.price or 0}
         )
+
+
+def db_profile_by_type(sender, q_type, queries):
+    print(f'db profile {q_type} for {sender}:')
+    for query in filter(lambda x: q_type in x,
+                        map(lambda x: x['sql'],
+                            queries)):
+        print(query)
+
+
+@receiver(pre_save, sender=ProductCategory)
+def update_prod_cat_save(sender, instance, **kwargs):
+    if instance.pk:
+        if instance.is_active:
+            instance.product_set.update(is_active=True)
+        else:
+            instance.product_set.update(is_active=False)
+
+        db_profile_by_type(sender, 'UPDATE', connection.queries)
