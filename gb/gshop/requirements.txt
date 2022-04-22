@@ -53,7 +53,7 @@ decorator @ file:///home/ktietz/src/ci/decorator_1611930055503/work
 defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
 diff-match-patch @ file:///tmp/build/80754af9/diff-match-patch_1594828741838/work
 distributed @ file:///opt/concourse/worker/volumes/live/061a375f-fbe4-45b4-4d80-0ba96d3ee7cb/volume/distributed_1617384077473/work
-Django==2.2
+Django==2.2.28
 docutils @ file:///opt/concourse/worker/volumes/live/c75adaac-4aab-4f8b-53ac-e2f0ae899bdf/volume/docutils_1617481416178/work
 entrypoints==0.3
 et-xmlfile==1.0.1
