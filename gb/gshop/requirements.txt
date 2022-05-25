@@ -166,7 +166,7 @@ pydocstyle @ file:///tmp/build/80754af9/pydocstyle_1616182067796/work
 pyerfa @ file:///opt/concourse/worker/volumes/live/f8414d66-f274-490a-63c6-6da935bf3422/volume/pyerfa_1613849506350/work
 pyflakes @ file:///home/ktietz/src/ci_ipy2/pyflakes_1612551159640/work
 Pygments @ file:///tmp/build/80754af9/pygments_1615143339740/work
-PyJWT==2.0.1
+PyJWT==2.4.0
 pylint @ file:///opt/concourse/worker/volumes/live/39bfc6db-5da7-4bc4-5240-e8a1167491ff/volume/pylint_1617135827184/work
 pyls-black @ file:///tmp/build/80754af9/pyls-black_1607553132291/work
 pyls-spyder @ file:///tmp/build/80754af9/pyls-spyder_1613849700860/work
