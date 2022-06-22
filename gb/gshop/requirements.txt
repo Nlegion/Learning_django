@@ -131,7 +131,7 @@ nose @ file:///tmp/build/80754af9/nose_1606773131901/work
 notebook @ file:///opt/concourse/worker/volumes/live/06e4d8fc-70ed-4cb0-554c-65c20061cb7f/volume/notebook_1616443453928/work
 numba @ file:///opt/concourse/worker/volumes/live/263a950e-7ddc-4297-63df-0c284f0b6d22/volume/numba_1616774255536/work
 numexpr @ file:///opt/concourse/worker/volumes/live/bd702b83-10e4-412c-4593-f06975f13f36/volume/numexpr_1614798497449/work
-numpy==1.19.5
+numpy==1.22.0
 numpydoc @ file:///tmp/build/80754af9/numpydoc_1605117425582/work
 oauthlib==3.1.0
 olefile==0.46
